@@ -3,6 +3,7 @@
 
 import argparse
 import json
+import platform
 import shutil
 import subprocess
 import sys
@@ -48,4 +49,7 @@ if __name__ == "__main__":
   with open(tf.name, 'wb') as f:
     shutil.copyfileobj(audioRequest,f)
 
-  subprocess.call(["afplay", tf.name]) # Currently only supports osx.
+  if platform.system() == 'Darwin':
+    subprocess.call(["afplay",tf.name])
+  else:
+    subprocess.call(["mplayer","-really-quiet",tf.name])
