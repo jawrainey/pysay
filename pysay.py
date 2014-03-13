@@ -10,6 +10,14 @@ import sys
 import tempfile
 import urllib2
 
+
+def getResponse(url):
+  try:
+    response = urllib2.urlopen(url)
+  except urllib2.URLError, e:
+    sys.exit("URLError: " + str(e.reason))
+  return response
+
 if __name__ == "__main__":
   APIKEY = "1953c74c5b60c0e3bdabaeb822e4e14c"
 
@@ -38,13 +46,15 @@ if __name__ == "__main__":
   else:
     url += "/action/" + args.action
 
-  data = json.load(urllib2.urlopen(url))
+  try:
+    data = json.load(getResponse(url))
+  except ValueError:
+    sys.exit("Invalid JSON returned from URL.")
 
   if not data['items']:
-    print "No results were found for the word (" + args.word + ") that you specified."
-    sys.exit()
+    sys.exit("No results were found for the word: " + args.word)
 
-  audioRequest = urllib2.urlopen(data['items'][0]['pathmp3'])
+  audioRequest = getResponse(data['items'][0]['pathmp3'])
 
   tf = tempfile.NamedTemporaryFile()
 
