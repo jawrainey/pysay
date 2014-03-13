@@ -27,7 +27,6 @@ if __name__ == "__main__":
   args = parser.parse_args()
 
   url =  "http://apifree.forvo.com/limit/1/format/json/key/" + APIKEY
-  url += "/action/" + args.action
   url += "/word/" + args.word #No need to validate as 'too few arguments' error is throw if no argument passed.
 
   if args.lang:
@@ -35,6 +34,9 @@ if __name__ == "__main__":
 
   if args.sex:
     url += "/sex/" + args.sex
+    url += "/action/" + "word-pronunciations/"
+  else:
+    url += "/action/" + args.action
 
   data = json.load(urllib2.urlopen(url))
 
