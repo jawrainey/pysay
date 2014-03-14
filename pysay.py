@@ -67,4 +67,4 @@ if __name__ == "__main__":
   if platform.system() == 'Darwin':
     subprocess.call(["afplay", tf.name])
   else:
-    subprocess.call(["mplayer", "-really-quiet", tf.name])
+    subprocess.call(["mplayer", "-really-quiet", "-nolirc", tf.name])
