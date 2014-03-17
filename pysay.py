@@ -21,7 +21,7 @@ def getResponse(url):
 if __name__ == "__main__":
   APIKEY = "1953c74c5b60c0e3bdabaeb822e4e14c"
 
-  parser = argparse.ArgumentParser(prog='pySay', usage='%(prog)s [options]',
+  parser = argparse.ArgumentParser(prog='pysay', usage='%(prog)s [options]',
     description='Pronounce a specified word or phrase in its native language.')
 
   parser.add_argument('word', help="A word or phrase to pronounce.")
