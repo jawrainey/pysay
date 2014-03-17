@@ -19,6 +19,8 @@ def getResponse(url):
   return response
 
 if __name__ == "__main__":
+  # Replace with your APIKEY
+  # See: http://api.forvo.com/plans-and-pricing/free/
   APIKEY = "1953c74c5b60c0e3bdabaeb822e4e14c"
 
   parser = argparse.ArgumentParser(prog='pysay', usage='%(prog)s [options]',

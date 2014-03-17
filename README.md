@@ -1,11 +1,10 @@
 # pysay
 
-pysay is a small command-line utility that uses the [forvo API](http://api.forvo.com/) to provide audio
-playback of a word _or_ phrase in their native language.
-
-The aim of this application is to replace the `say` command provided by OSX with a native language alternative.
+pysay is a small command-line utility that uses the [forvo API](http://api.forvo.com/) to provide audio playback of a word _or_ phrase in their native language. It was written as a replacement for the `say` command provided by OSX with a native language alternative.
 
 ## Installation
+
+You will need to [sign up](http://api.forvo.com/plans-and-pricing/free/) to forvo and replace the contents of `APIKEY` in `pysay.py` with your key.
 
     git clone http://github.com/jawrainey/pysay.git ~/pysay
     cd ~/pysay && chmod +x pysay.py
