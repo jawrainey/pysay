@@ -6,9 +6,9 @@ pysay is a small command-line utility that uses the [forvo API](http://api.forvo
 
 You will need to [sign up](http://api.forvo.com/plans-and-pricing/free/) to forvo and replace the contents of `APIKEY` in `pysay.py` with your key.
 
-    git clone http://github.com/jawrainey/pysay.git ~/pysay
+    git clone https://github.com/jawrainey/pysay.git ~/pysay
     cd ~/pysay && chmod +x pysay.py
-    mv pysay.py /usr/local/bin/pysay #Note the removal of extension
+    sudo cp pysay.py /usr/local/bin/pysay
 
 ## Usage
 
