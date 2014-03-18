@@ -40,7 +40,7 @@ if __name__ == "__main__":
   args = parser.parse_args()
 
   url = "http://apifree.forvo.com/limit/1/format/json/key/" + APIKEY
-  url += "/word/" + args.word
+  url += "/word/" + "_".join(args.word.split(" "))
 
   if args.lang:
     url += "/language/" + args.lang
